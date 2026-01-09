@@ -1,0 +1,17 @@
+[
+    {
+        "Book Name": "12 Rules of Life",
+        "Author": "GUL",
+        "Issued To": "1234"
+    },
+    {
+        "Book Name": "The Silent Patient",
+        "Author": "Gul2",
+        "Issued To": null
+    },
+    {
+        "Book Name": "king   1",
+        "Author": "",
+        "Issued To": null
+    }
+]
