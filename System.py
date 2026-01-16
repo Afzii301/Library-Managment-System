@@ -226,10 +226,6 @@ while True:
         break
 
     else:
-<<<<<<< HEAD
-        print("Invalid choice")
-=======
         print("Invalid choice")
 
 
->>>>>>> d88b07ab71e2cef9873a5f368048bbecfeb54448
