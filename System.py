@@ -1,3 +1,4 @@
+# System.py
 from db import conn, cursor
 
 class Library:
@@ -144,3 +145,73 @@ class Library:
 
         for i, b in enumerate(books, 1):
             print(i, b[0], "-", b[1], "- Issued to", b[2])
+
+
+# ===== MAIN MENU =====
+if __name__ == "__main__":
+    print("Connected to DB, starting Library Management System...")
+    lib = Library()
+
+    while True:
+        print("\n........ Library Management System ........")
+        print("1. Add Book")
+        print("2. Show All Books")
+        print("3. Update Book")
+        print("4. Delete Book")
+        print("5. Register Member")
+        print("6. Show Members")
+        print("7. Issue Book")
+        print("8. Return Book")
+        print("9. Show Available Books")
+        print("10. Show Issued Books")
+        print("11. Exit")
+
+        choice = input("Enter choice: ")
+
+        if choice == "1":
+            name = input("Enter book name: ")
+            author = input("Enter author name: ")
+            lib.add_book(name, author)
+
+        elif choice == "2":
+            lib.show_books()
+
+        elif choice == "3":
+            old_name = input("Enter old book name: ")
+            new_name = input("Enter new book name: ")
+            new_author = input("Enter new author name: ")
+            lib.update_book(old_name, new_name, new_author)
+
+        elif choice == "4":
+            name = input("Enter book name to delete: ")
+            lib.delete_book(name)
+
+        elif choice == "5":
+            name = input("Enter member name: ")
+            member_id = input("Enter member ID: ")
+            lib.register_member(name, member_id)
+
+        elif choice == "6":
+            lib.show_members()
+
+        elif choice == "7":
+            book_name = input("Enter book name to issue: ")
+            member_id = input("Enter member ID: ")
+            lib.issue_book(book_name, member_id)
+
+        elif choice == "8":
+            book_name = input("Enter book name to return: ")
+            lib.return_book(book_name)
+
+        elif choice == "9":
+            lib.show_available_books()
+
+        elif choice == "10":
+            lib.show_issued_books()
+
+        elif choice == "11":
+            print("Program exited")
+            break
+
+        else:
+            print("Invalid choice")
